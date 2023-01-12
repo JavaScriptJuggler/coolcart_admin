@@ -354,6 +354,7 @@ h6 {
   margin-bottom: -2px;
   border: none;
   color: #2c384e;
+  text-decoration: none;
 }
 
 .nav-tabs-bordered .nav-link:hover,

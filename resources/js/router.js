@@ -5,6 +5,8 @@ import { createWebHistory, createRouter } from "vue-router";
 import login from './pages/auth/login.vue'
 import register from './pages/auth/register.vue'
 import DashboardLay from "./layouts/dashboardLay.vue";
+import inventory from './pages/inventory.vue';
+import addproducts from './pages/addproducts.vue';
 import page404 from './pages/errors/404.vue'
 /* routes */
 
@@ -34,7 +36,27 @@ const routes = [
         component: DashboardLay,
         meta: {
             'needAuth': true
-        }
+        },
+        children: [
+            {
+                path: '/inventory',
+                name: 'inventory',
+                component: inventory,
+                meta: {
+                    'needAuth': true,
+                    'pagename': 'Manage Inventory'
+                }
+            },
+            {
+                path: '/add-products',
+                name: 'add-products',
+                component: addproducts,
+                meta: {
+                    'needAuth': true,
+                    'pagename': 'Add Products'
+                }
+            },
+        ]
     },
     {
         path: '/:pathMatch(.*)',

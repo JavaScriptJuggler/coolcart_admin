@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\authController;
+use App\Http\Controllers\VariationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::get('/', function () {
-        // Uses first & second middleware...
+    Route::controller(VariationController::class)->group(function () {
+       Route::post('/get-variaction-matchings','getVariactionMatchings')->name('get-variaction-matchings');
     });
 });

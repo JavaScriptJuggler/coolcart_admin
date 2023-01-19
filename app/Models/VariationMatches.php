@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class VariationMatches extends Model
 {
     use HasFactory;
+    protected $table = 'variation_matches';
 }

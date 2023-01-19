@@ -21,3 +21,9 @@ Route::post('/register', [authController::class, 'register'])->name('register');
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/', function () {
+        // Uses first & second middleware...
+    });
+});

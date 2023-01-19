@@ -17,10 +17,10 @@
                 </a>
                 <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="components-alerts.html">
+                        <router-link to="/add-products">
                             <i class="bi bi-circle"></i>
                             <span>Add Products</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li>
                         <a href="components-accordion.html">
